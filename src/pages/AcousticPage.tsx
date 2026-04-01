@@ -2,13 +2,14 @@ import { SEO } from "@/components/SEO";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHero } from "@/components/page-hero";
 import { CTASection } from "@/components/cta-section";
-import { ContentSection, FeatureGrid } from "@/components/content-blocks";
+import { ContentSection, FeatureGrid, PageImage } from "@/components/content-blocks";
+import { IMAGES } from "@/lib/storage";
 
 export default function AcousticPage() {
   return (
     <>
       <SEO title="תקרה מתוחה אקוסטית — בידוד רעשים ושיפור סאונד" description="תקרה מתוחה אקוסטית עם יריעה מנוקבת מיקרו שסופגת רעשים ומשפרת אקוסטיקה. לקולנוע ביתי, משרדים, מסעדות ומוסדות חינוך." canonical="/acoustic-stretch-ceiling" />
-      <PageHero title="תקרה מתוחה אקוסטית — שקט, איכות סאונד ועיצוב" subtitle="יריעה מנוקבת מיקרו בשילוב שכבת בידוד אקוסטי. סופגת הדהוד ורעשי רקע, משפרת איכות שמע, ומספקת את כל היתרונות של תקרה מתוחה רגילה." />
+      <PageHero title="תקרה מתוחה אקוסטית — שקט, איכות סאונד ועיצוב" subtitle="יריעה מנוקבת מיקרו בשילוב שכבת בידוד אקוסטי. סופגת הדהוד ורעשי רקע, משפרת איכות שמע, ומספקת את כל היתרונות של תקרה מתוחה רגילה." image={IMAGES.glossyRoom} imageAlt="תקרה מתוחה אקוסטית בחלל מעוצב" />
       <Breadcrumbs items={[{ label: "ראשי", href: "/" }, { label: "תקרות מתוחות", href: "/stretch-ceilings" }, { label: "תקרה אקוסטית" }]} />
       <ContentSection>
         <h2 className="text-h2-mobile md:text-h2-desktop">איך עובדת תקרה אקוסטית?</h2>
@@ -23,6 +24,7 @@ export default function AcousticPage() {
       <ContentSection bg="light">
         <h2 className="text-h2-mobile md:text-h2-desktop">למי מתאימה תקרה אקוסטית?</h2>
         <p className="mt-4 text-body text-sky-muted">קולנוע ביתי, חדרי ישיבות, משרדי open space, מסעדות, גני ילדים, בתי ספר, מרפאות ומרחבי עבודה משותפים.</p>
+        <PageImage src={IMAGES.glossyHall} alt="תקרה אקוסטית בחלל מסחרי" />
       </ContentSection>
       <CTASection title="צריכים פתרון אקוסטי?" />
     </>

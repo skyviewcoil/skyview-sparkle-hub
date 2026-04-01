@@ -2,13 +2,14 @@ import { SEO } from "@/components/SEO";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHero } from "@/components/page-hero";
 import { CTASection } from "@/components/cta-section";
-import { ContentSection, FeatureGrid } from "@/components/content-blocks";
+import { ContentSection, FeatureGrid, PageImage } from "@/components/content-blocks";
+import { IMAGES } from "@/lib/storage";
 
 export default function PrintedPage() {
   return (
     <>
       <SEO title="תקרה מתוחה עם הדפס — עיצוב אישי על התקרה" description="הדפסה ישירה של תמונות, עיצובים וטקסטורות על תקרה מתוחה. רזולוציה גבוהה, עמידות לשנים, ומגוון אפשרויות עיצוביות ללא גבול." canonical="/printed-stretch-ceiling" />
-      <PageHero title="תקרה מתוחה עם הדפס — כל תמונה, כל עיצוב" subtitle="הדפסת UV ישירה על יריעת התקרה ברזולוציה גבוהה. שמיים, עננים, יערות, טקסטורות עץ, דוגמאות גיאומטריות, לוגו או כל תמונה שתבחרו — על התקרה שלכם." />
+      <PageHero title="תקרה מתוחה עם הדפס — כל תמונה, כל עיצוב" subtitle="הדפסת UV ישירה על יריעת התקרה ברזולוציה גבוהה. שמיים, עננים, יערות, טקסטורות עץ, דוגמאות גיאומטריות, לוגו או כל תמונה שתבחרו — על התקרה שלכם." image={IMAGES.printSky} imageAlt="תקרה מתוחה עם הדפס שמיים" />
       <Breadcrumbs items={[{ label: "ראשי", href: "/" }, { label: "תקרות מתוחות", href: "/stretch-ceilings" }, { label: "תקרה עם הדפס" }]} />
       <ContentSection>
         <h2 className="text-h2-mobile md:text-h2-desktop">טכנולוגיית ההדפסה</h2>
@@ -23,6 +24,7 @@ export default function PrintedPage() {
       <ContentSection bg="light">
         <h2 className="text-h2-mobile md:text-h2-desktop">רעיונות פופולריים</h2>
         <p className="mt-4 text-body text-sky-muted">שמיים עם עננים לחדר ילדים, טקסטורת עץ לסלון כפרי, דוגמה גיאומטרית למשרד מודרני, לוגו חברה לחדר ישיבות, ציור שמן לפרויקט יוקרתי.</p>
+        <PageImage src={IMAGES.printWine} alt="תקרה מתוחה עם הדפס דקורטיבי במלון" />
       </ContentSection>
       <CTASection title="רוצים תקרה עם הדפס?" />
     </>
