@@ -1,11 +1,11 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: ["./src/**/*.{ts,tsx}"],
+  content: ["./index.html", "./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
       fontFamily: {
-        heebo: ["var(--font-heebo)", "sans-serif"],
+        heebo: ["'Heebo'", "sans-serif"],
       },
       colors: {
         sky: {

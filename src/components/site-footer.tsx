@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import {
   SITE_NAME,
   PHONE,
@@ -13,10 +13,9 @@ export function SiteFooter() {
     <footer className="bg-sky-graphite text-white/80">
       <div className="section-container py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
-          {/* Brand */}
           <div className="md:col-span-1">
             <Link
-              href="/"
+              to="/"
               className="text-2xl font-black text-white tracking-tight"
             >
               {SITE_NAME}
@@ -26,7 +25,6 @@ export function SiteFooter() {
             </p>
           </div>
 
-          {/* Services */}
           <div>
             <h3 className="text-sm font-bold text-white mb-4 tracking-wide">
               שירותים
@@ -35,7 +33,7 @@ export function SiteFooter() {
               {FOOTER_SERVICE_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
-                    href={link.href}
+                    to={link.href}
                     className="text-sm text-white/60 hover:text-white transition-colors"
                   >
                     {link.label}
@@ -45,7 +43,6 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          {/* Info */}
           <div>
             <h3 className="text-sm font-bold text-white mb-4 tracking-wide">
               מידע
@@ -54,7 +51,7 @@ export function SiteFooter() {
               {FOOTER_INFO_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
-                    href={link.href}
+                    to={link.href}
                     className="text-sm text-white/60 hover:text-white transition-colors"
                   >
                     {link.label}
@@ -64,7 +61,6 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h3 className="text-sm font-bold text-white mb-4 tracking-wide">
               צור קשר
@@ -93,14 +89,6 @@ export function SiteFooter() {
 
         <div className="mt-14 pt-8 border-t border-white/10 text-xs text-white/40 flex flex-col md:flex-row justify-between gap-2">
           <span>© {new Date().getFullYear()} {SITE_NAME}. כל הזכויות שמורות.</span>
-          <div className="flex gap-4">
-            <Link href="/privacy" className="hover:text-white/60">
-              מדיניות פרטיות
-            </Link>
-            <Link href="/terms" className="hover:text-white/60">
-              תנאי שימוש
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

@@ -1,7 +1,5 @@
-"use client";
-
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS, PHONE } from "@/lib/site-config";
 import { cn } from "@/lib/cn";
@@ -27,29 +25,27 @@ export function SiteHeader() {
     >
       <div className="section-container flex items-center justify-between h-16 md:h-20">
         <Link
-          href="/"
+          to="/"
           className="text-xl md:text-2xl font-black tracking-tight text-sky-graphite"
         >
           SkyView
         </Link>
 
-        {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
-              href={link.href}
+              to={link.href}
               className="text-sm font-medium text-sky-graphite/80 hover:text-sky-navy transition-colors"
             >
               {link.label}
             </Link>
           ))}
-          <Link href="/pricing" className="btn-primary !h-10 !px-6 !text-sm">
+          <Link to="/pricing" className="btn-primary !h-10 !px-6 !text-sm">
             למחשבון המחיר
           </Link>
         </nav>
 
-        {/* Mobile menu toggle */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden p-2"
@@ -59,13 +55,12 @@ export function SiteHeader() {
         </button>
       </div>
 
-      {/* Mobile nav */}
       {menuOpen && (
         <nav className="md:hidden bg-white border-t border-sky-border px-5 pb-6 pt-4 space-y-4">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
-              href={link.href}
+              to={link.href}
               onClick={() => setMenuOpen(false)}
               className="block text-base font-medium text-sky-graphite/80 hover:text-sky-navy"
             >
@@ -73,7 +68,7 @@ export function SiteHeader() {
             </Link>
           ))}
           <Link
-            href="/pricing"
+            to="/pricing"
             onClick={() => setMenuOpen(false)}
             className="btn-primary !w-full"
           >

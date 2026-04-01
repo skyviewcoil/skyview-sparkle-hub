@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { PHONE } from "@/lib/site-config";
 
 interface CTASectionProps {
@@ -19,7 +19,7 @@ export function CTASection({
         <p className="mt-4 text-body-lg text-white/70">{text}</p>
         <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
           <Link
-            href="/pricing"
+            to="/pricing"
             className="btn-primary !bg-white !text-sky-navy hover:!bg-white/90"
           >
             למחשבון המחיר

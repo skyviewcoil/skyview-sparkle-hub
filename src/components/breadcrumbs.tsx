@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { SITE_URL } from "@/lib/site-config";
 
 export interface BreadcrumbItem {
@@ -36,7 +36,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                 {i > 0 && <span className="text-sky-border">/</span>}
                 {item.href ? (
                   <Link
-                    href={item.href}
+                    to={item.href}
                     className="hover:text-sky-navy transition-colors"
                   >
                     {item.label}
