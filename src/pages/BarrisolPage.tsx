@@ -3,13 +3,14 @@ import { SEO } from "@/components/SEO";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHero } from "@/components/page-hero";
 import { CTASection } from "@/components/cta-section";
-import { ContentSection, FeatureGrid } from "@/components/content-blocks";
+import { ContentSection, FeatureGrid, PageImage } from "@/components/content-blocks";
+import { IMAGES } from "@/lib/storage";
 
 export default function BarrisolPage() {
   return (
     <>
       <SEO title="בריסול (Barrisol) — תקרות מתוחות מותג פרימיום" description="בריסול (Barrisol) היא מותג צרפתי מוביל לתקרות מתוחות. SkyView מציעה חומרים באיכות מקבילה עם ייצור מקומי, זמני אספקה קצרים ומחירים תחרותיים." canonical="/barrisol" />
-      <PageHero title="בריסול — תקרות מתוחות ברמה הגבוהה ביותר" subtitle="בריסול (Barrisol) הוא מותג צרפתי שהפך לשם נרדף לתקרות מתוחות איכותיות. SkyView מציעה חומרים ופתרונות באיכות מקבילה, עם ייצור מקומי, זמני אספקה קצרים ומחירים תחרותיים." />
+      <PageHero title="בריסול — תקרות מתוחות ברמה הגבוהה ביותר" subtitle="בריסול (Barrisol) הוא מותג צרפתי שהפך לשם נרדף לתקרות מתוחות איכותיות. SkyView מציעה חומרים ופתרונות באיכות מקבילה, עם ייצור מקומי, זמני אספקה קצרים ומחירים תחרותיים." image={IMAGES.glossyAngle} imageAlt="תקרה מתוחה באיכות בריסול" />
       <Breadcrumbs items={[{ label: "ראשי", href: "/" }, { label: "תקרות מתוחות", href: "/stretch-ceilings" }, { label: "בריסול" }]} />
       <ContentSection>
         <h2 className="text-h2-mobile md:text-h2-desktop">מה זה בריסול?</h2>

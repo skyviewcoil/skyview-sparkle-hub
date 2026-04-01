@@ -3,7 +3,8 @@ import { SEO } from "@/components/SEO";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHero } from "@/components/page-hero";
 import { CTASection } from "@/components/cta-section";
-import { ContentSection, ComparisonTable } from "@/components/content-blocks";
+import { ContentSection, ComparisonTable, PageImage } from "@/components/content-blocks";
+import { IMAGES } from "@/lib/storage";
 
 const rows = [
   { label: "זמן התקנה", stretch: "3-5 שעות לחדר", other: "3-5 ימי עבודה" },
@@ -22,7 +23,7 @@ export default function VsDrywallPage() {
   return (
     <>
       <SEO title="תקרה מתוחה או גבס — השוואה מלאה 2026" description="השוואה מקיפה בין תקרה מתוחה לתקרת גבס: מחיר, זמן התקנה, עמידות במים, תחזוקה, תאורה, אקוסטיקה ואורך חיים." canonical="/stretch-ceiling-vs-drywall" />
-      <PageHero title="תקרה מתוחה או גבס — מה עדיף?" subtitle="השוואה מלאה ואובייקטיבית בין שני הפתרונות הנפוצים ביותר לתקרות. לכל אחד יש יתרונות — הנה העובדות שיעזרו לכם להחליט." />
+      <PageHero title="תקרה מתוחה או גבס — מה עדיף?" subtitle="השוואה מלאה ואובייקטיבית בין שני הפתרונות הנפוצים ביותר לתקרות. לכל אחד יש יתרונות — הנה העובדות שיעזרו לכם להחליט." image={IMAGES.glossyHero} imageAlt="תקרה מתוחה מול גבס — השוואה חזותית" />
       <Breadcrumbs items={[{ label: "ראשי", href: "/" }, { label: "תקרה מתוחה או גבס" }]} />
       <ContentSection>
         <h2 className="text-h2-mobile md:text-h2-desktop">טבלת השוואה מלאה</h2>

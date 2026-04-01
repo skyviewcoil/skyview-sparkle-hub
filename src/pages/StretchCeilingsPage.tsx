@@ -3,22 +3,23 @@ import { SEO } from "@/components/SEO";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHero } from "@/components/page-hero";
 import { CTASection } from "@/components/cta-section";
-import { ContentSection, FeatureGrid } from "@/components/content-blocks";
-
-const types = [
-  { title: "מט", text: "גימור חלק ושקט ללא החזרי אור. מתאים לסלון, חדר שינה ומשרד.", href: "/stretch-ceiling-matte" },
-  { title: "מבריק", text: "משטח מראה שמכפיל תחושת מרחב. אידיאלי לחללים קטנים.", href: "/stretch-ceiling-glossy" },
-  { title: "מוארת", text: "תאורה אחידה דרך יריעה שקופה. מחליפה גופי תאורה מסורתיים.", href: "/lighted-stretch-ceiling" },
-  { title: "אקוסטית", text: "יריעה מנוקבת שסופגת רעשים. לקולנוע ביתי, משרדים ומסעדות.", href: "/acoustic-stretch-ceiling" },
-  { title: "עם הדפס", text: "הדפסה של תמונה או גרפיקה ישירות על התקרה.", href: "/printed-stretch-ceiling" },
-  { title: "עם פס LED", text: "פסי LED נסתרים שיוצרים קווי אור מרחפים בתקרה.", href: "/stretch-ceiling-led-strip" },
-];
+import { ContentSection, FeatureGrid, PageImage } from "@/components/content-blocks";
+import { IMAGES } from "@/lib/storage";
 
 export default function StretchCeilingsPage() {
+  const types = [
+    { title: "מט", text: "גימור חלק ושקט ללא החזרי אור. מתאים לסלון, חדר שינה ומשרד.", href: "/stretch-ceiling-matte", img: IMAGES.matte1 },
+    { title: "מבריק", text: "משטח מראה שמכפיל תחושת מרחב. אידיאלי לחללים קטנים.", href: "/stretch-ceiling-glossy", img: IMAGES.glossyWide },
+    { title: "מוארת", text: "תאורה אחידה דרך יריעה שקופה. מחליפה גופי תאורה מסורתיים.", href: "/lighted-stretch-ceiling", img: IMAGES.glossyLed },
+    { title: "אקוסטית", text: "יריעה מנוקבת שסופגת רעשים. לקולנוע ביתי, משרדים ומסעדות.", href: "/acoustic-stretch-ceiling", img: IMAGES.glossyRoom },
+    { title: "עם הדפס", text: "הדפסה של תמונה או גרפיקה ישירות על התקרה.", href: "/printed-stretch-ceiling", img: IMAGES.printSky },
+    { title: "עם פס LED", text: "פסי LED נסתרים שיוצרים קווי אור מרחפים בתקרה.", href: "/stretch-ceiling-led-strip", img: IMAGES.glossyDetail },
+  ];
+
   return (
     <>
       <SEO title="תקרות מתוחות — כל סוגי הפתרונות והגימורים" description="מדריך מקיף לסוגי תקרות מתוחות: מט, מבריק, סאטן, מוארת, אקוסטית ועם הדפס. גלו איזו תקרה מתאימה לחלל שלכם." canonical="/stretch-ceilings" />
-      <PageHero title="תקרות מתוחות — כל הפתרונות במקום אחד" subtitle="SkyView מציעה את כל סוגי התקרות המתוחות — מט, מבריק, סאטן, מוארת, אקוסטית ועם הדפס — עם ייצור מקומי, התקנה מקצועית ואחריות מלאה." />
+      <PageHero title="תקרות מתוחות — כל הפתרונות במקום אחד" subtitle="SkyView מציעה את כל סוגי התקרות המתוחות — מט, מבריק, סאטן, מוארת, אקוסטית ועם הדפס — עם ייצור מקומי, התקנה מקצועית ואחריות מלאה." image={IMAGES.glossyHero} imageAlt="תקרות מתוחות — כל סוגי הפתרונות" />
       <Breadcrumbs items={[{ label: "ראשי", href: "/" }, { label: "תקרות מתוחות" }]} />
       <ContentSection>
         <h2 className="text-h2-mobile md:text-h2-desktop">מהי תקרה מתוחה?</h2>
@@ -29,10 +30,15 @@ export default function StretchCeilingsPage() {
           <h2 className="text-h2-mobile md:text-h2-desktop text-center">סוגי תקרות מתוחות</h2>
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {types.map((t) => (
-              <Link key={t.href} to={t.href} className="group p-6 bg-white border border-sky-border hover:border-sky-navy/30 transition-colors">
-                <h3 className="text-h3-mobile md:text-h3-desktop group-hover:text-sky-navy transition-colors">{t.title}</h3>
-                <p className="mt-2 text-body text-sky-muted">{t.text}</p>
-                <span className="inline-block mt-3 text-sm font-semibold text-sky-navy">למידע נוסף ←</span>
+              <Link key={t.href} to={t.href} className="group bg-white border border-sky-border hover:border-sky-navy/30 transition-colors rounded-2xl overflow-hidden">
+                <div className="h-44 overflow-hidden">
+                  <img src={t.img} alt={`תקרה מתוחה ${t.title}`} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-h3-mobile md:text-h3-desktop group-hover:text-sky-navy transition-colors">{t.title}</h3>
+                  <p className="mt-2 text-body text-sky-muted">{t.text}</p>
+                  <span className="inline-block mt-3 text-sm font-semibold text-sky-navy">למידע נוסף ←</span>
+                </div>
               </Link>
             ))}
           </div>

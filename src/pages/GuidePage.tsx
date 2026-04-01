@@ -3,17 +3,19 @@ import { SEO } from "@/components/SEO";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHero } from "@/components/page-hero";
 import { CTASection } from "@/components/cta-section";
-import { ContentSection } from "@/components/content-blocks";
+import { ContentSection, PageImage } from "@/components/content-blocks";
+import { IMAGES } from "@/lib/storage";
 
 export default function GuidePage() {
   return (
     <>
       <SEO title="מדריך תקרות מתוחות — כל מה שצריך לדעת לפני שמזמינים" description="מדריך מקיף לתקרות מתוחות: סוגי חומרים, גימורים, תהליך התקנה, מחירים, תחזוקה, אורך חיים, מגבלות ושאלות נפוצות." canonical="/stretch-ceiling-guide" />
-      <PageHero title="מדריך תקרות מתוחות — כל מה שצריך לדעת" subtitle="לפני שמזמינים תקרה מתוחה, כדאי להבין את הטכנולוגיה, סוגי החומרים, תהליך ההתקנה, המחירים והמגבלות. המדריך הזה מרכז את כל המידע." />
+      <PageHero title="מדריך תקרות מתוחות — כל מה שצריך לדעת" subtitle="לפני שמזמינים תקרה מתוחה, כדאי להבין את הטכנולוגיה, סוגי החומרים, תהליך ההתקנה, המחירים והמגבלות. המדריך הזה מרכז את כל המידע." image={IMAGES.matte1} imageAlt="מדריך תקרות מתוחות — מט בחדר" />
       <Breadcrumbs items={[{ label: "ראשי", href: "/" }, { label: "מדריך" }]} />
       <ContentSection>
         <h2 className="text-h2-mobile md:text-h2-desktop">מהי תקרה מתוחה?</h2>
         <p className="mt-4 text-body text-sky-muted">תקרה מתוחה היא מערכת גימור שמורכבת ממסגרת אלומיניום שמחוברת לקירות, ויריעה שנמתחת עליה. היריעה נמתחת בחום ומתקררת למשטח חלק לחלוטין.</p>
+        <PageImage src={IMAGES.glossyHero} alt="תקרה מתוחה מותקנת — דוגמה" />
         <h2 className="mt-12 text-h2-mobile md:text-h2-desktop">סוגי חומרים</h2>
         <p className="mt-4 text-body text-sky-muted"><strong>PVC</strong> — החומר הנפוץ ביותר. עמיד במים, זמין ב-150+ צבעים וגימורים, ניתן להדפסה. עובי טיפוסי: 0.17-0.35 מ״מ.</p>
         <p className="mt-4 text-body text-sky-muted"><strong>בד טכני (Polyester)</strong> — בד ארוג ללא PVC. נושם, מתאים למי שמעדיף חומרים ללא פלסטיק. מגיע בגימור <Link to="/stretch-ceiling-matte" className="text-sky-navy hover:underline">מט</Link> בלבד.</p>

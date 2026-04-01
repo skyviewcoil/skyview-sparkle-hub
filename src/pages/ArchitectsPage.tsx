@@ -4,12 +4,13 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHero } from "@/components/page-hero";
 import { CTASection } from "@/components/cta-section";
 import { ContentSection, FeatureGrid } from "@/components/content-blocks";
+import { IMAGES } from "@/lib/storage";
 
 export default function ArchitectsPage() {
   return (
     <>
       <SEO title="תקרות מתוחות לאדריכלים ומעצבי פנים" description="שיתוף פעולה מקצועי עם SkyView: מפרטים טכניים, דוגמאות חומרים, שרטוטי DWG, ותמיכה טכנית לאורך הפרויקט." canonical="/stretch-ceilings-for-architects" />
-      <PageHero title="לאדריכלים ומעצבי פנים — שותפים לעיצוב" subtitle="SkyView עובדת עם אדריכלים ומעצבי פנים בפרויקטים פרטיים ומסחריים. מפרטים טכניים, דוגמאות חומרים, ותמיכה מקצועית — מתכנון ועד גמר." ctaText="צרו קשר מקצועי" />
+      <PageHero title="לאדריכלים ומעצבי פנים — שותפים לעיצוב" subtitle="SkyView עובדת עם אדריכלים ומעצבי פנים בפרויקטים פרטיים ומסחריים. מפרטים טכניים, דוגמאות חומרים, ותמיכה מקצועית — מתכנון ועד גמר." ctaText="צרו קשר מקצועי" image={IMAGES.glossyCorner} imageAlt="תקרה מתוחה בפרויקט אדריכלי" />
       <Breadcrumbs items={[{ label: "ראשי", href: "/" }, { label: "תקרות מתוחות", href: "/stretch-ceilings" }, { label: "לאדריכלים" }]} />
       <ContentSection>
         <h2 className="text-h2-mobile md:text-h2-desktop">מה אנחנו מספקים לאנשי מקצוע</h2>
