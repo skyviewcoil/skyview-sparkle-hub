@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHero } from "@/components/page-hero";
 import { CTASection } from "@/components/cta-section";
 import { ContentSection, FeatureGrid } from "@/components/content-blocks";
@@ -16,6 +17,14 @@ export default function LightedCeilingPage() {
       <PageHero
         title="תקרה מתוחה מוארת — התקרה היא גוף התאורה"
         subtitle="יריעה שקופה או חצי-שקופה עם שכבת תאורת LED מאחוריה. התוצאה: תקרה שמאירה באור אחיד ורך — ללא גופי תאורה בולטים, ללא צללים וללא נקודות חמות."
+      />
+
+      <Breadcrumbs
+        items={[
+          { label: "ראשי", href: "/" },
+          { label: "תקרות מתוחות", href: "/stretch-ceilings" },
+          { label: "תקרה מוארת" },
+        ]}
       />
       <ContentSection>
         <h2 className="text-h2-mobile md:text-h2-desktop">איך עובדת תקרה מוארת?</h2>

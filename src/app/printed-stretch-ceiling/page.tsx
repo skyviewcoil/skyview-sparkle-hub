@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHero } from "@/components/page-hero";
 import { CTASection } from "@/components/cta-section";
 import { ContentSection, FeatureGrid } from "@/components/content-blocks";
@@ -16,6 +17,14 @@ export default function PrintedPage() {
       <PageHero
         title="תקרה מתוחה עם הדפס — כל תמונה, כל עיצוב"
         subtitle="הדפסת UV ישירה על יריעת התקרה ברזולוציה גבוהה. שמיים, עננים, יערות, טקסטורות עץ, דוגמאות גיאומטריות, לוגו או כל תמונה שתבחרו — על התקרה שלכם."
+      />
+
+      <Breadcrumbs
+        items={[
+          { label: "ראשי", href: "/" },
+          { label: "תקרות מתוחות", href: "/stretch-ceilings" },
+          { label: "תקרה עם הדפס" },
+        ]}
       />
       <ContentSection>
         <h2 className="text-h2-mobile md:text-h2-desktop">טכנולוגיית ההדפסה</h2>

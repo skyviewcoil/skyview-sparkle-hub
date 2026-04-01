@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHero } from "@/components/page-hero";
 import { CTASection } from "@/components/cta-section";
 import { ContentSection, FeatureGrid } from "@/components/content-blocks";
@@ -17,6 +18,14 @@ export default function BusinessPage() {
         title="תקרות מתוחות לעסקים — פתרון מהיר ומקצועי"
         subtitle="התקנה בשעות הלילה או בסופי שבוע, ללא הפרעה לפעילות העסקית. פתרונות מותאמים למשרדים, חנויות, מסעדות, מלונות ומרפאות."
         ctaText="קבלו הצעה לעסק"
+      />
+
+      <Breadcrumbs
+        items={[
+          { label: "ראשי", href: "/" },
+          { label: "תקרות מתוחות", href: "/stretch-ceilings" },
+          { label: "לעסקים" },
+        ]}
       />
       <ContentSection>
         <h2 className="text-h2-mobile md:text-h2-desktop">למה עסקים בוחרים בתקרה מתוחה?</h2>

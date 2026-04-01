@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHero } from "@/components/page-hero";
 import { CTASection } from "@/components/cta-section";
 import { ContentSection } from "@/components/content-blocks";
@@ -16,6 +17,14 @@ export default function GlossyPage() {
       <PageHero
         title="תקרה מתוחה מבריקה — מרחב כפול"
         subtitle="יריעה מבריקה (גלוסי) יוצרת השתקפות עדינה של החלל — כמו מראה על התקרה. האפקט מכפיל את תחושת הגובה ומרחיב חללים קטנים בצורה דרמטית."
+      />
+
+      <Breadcrumbs
+        items={[
+          { label: "ראשי", href: "/" },
+          { label: "תקרות מתוחות", href: "/stretch-ceilings" },
+          { label: "מבריק" },
+        ]}
       />
       <ContentSection>
         <h2 className="text-h2-mobile md:text-h2-desktop">למי מתאים גימור מבריק?</h2>

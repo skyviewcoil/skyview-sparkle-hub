@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHero } from "@/components/page-hero";
 import { CTASection } from "@/components/cta-section";
 import { ContentSection } from "@/components/content-blocks";
@@ -16,6 +17,14 @@ export default function MattePage() {
       <PageHero
         title="תקרה מתוחה מט — חלקה, שקטה, אלגנטית"
         subtitle="גימור מט הוא הבחירה הפופולרית ביותר — משטח חלק ואחיד ללא החזרי אור, שנראה כמו תקרת טיח מושלמת אבל ללא הסדקים, הכתמים והתחזוקה."
+      />
+
+      <Breadcrumbs
+        items={[
+          { label: "ראשי", href: "/" },
+          { label: "תקרות מתוחות", href: "/stretch-ceilings" },
+          { label: "מט" },
+        ]}
       />
       <ContentSection>
         <h2 className="text-h2-mobile md:text-h2-desktop">למה מט?</h2>

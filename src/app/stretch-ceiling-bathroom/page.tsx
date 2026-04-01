@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHero } from "@/components/page-hero";
 import { CTASection } from "@/components/cta-section";
 import { ContentSection, FeatureGrid } from "@/components/content-blocks";
@@ -16,6 +17,14 @@ export default function BathroomPage() {
       <PageHero
         title="תקרה מתוחה לאמבטיה — עמידה ב-100% ללחות"
         subtitle="חדרי אמבטיה דורשים תקרה שעומדת באדי מים, לחות גבוהה ונזילות. תקרה מתוחה מ-PVC היא הפתרון המושלם — חסינה למים, נטולת עובש, ומעוצבת בדיוק לפי הטעם שלכם."
+      />
+
+      <Breadcrumbs
+        items={[
+          { label: "ראשי", href: "/" },
+          { label: "תקרות מתוחות", href: "/stretch-ceilings" },
+          { label: "תקרה מתוחה לאמבטיה" },
+        ]}
       />
       <ContentSection>
         <h2 className="text-h2-mobile md:text-h2-desktop">למה תקרה מתוחה מתאימה לאמבטיה?</h2>

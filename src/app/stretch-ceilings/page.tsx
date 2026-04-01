@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHero } from "@/components/page-hero";
 import { CTASection } from "@/components/cta-section";
 import { ContentSection, FeatureGrid } from "@/components/content-blocks";
@@ -26,6 +27,13 @@ export default function StretchCeilingsPage() {
       <PageHero
         title="תקרות מתוחות — כל הפתרונות במקום אחד"
         subtitle="SkyView מציעה את כל סוגי התקרות המתוחות — מט, מבריק, סאטן, מוארת, אקוסטית ועם הדפס — עם ייצור מקומי, התקנה מקצועית ואחריות מלאה."
+      />
+
+      <Breadcrumbs
+        items={[
+          { label: "ראשי", href: "/" },
+          { label: "תקרות מתוחות" },
+        ]}
       />
 
       <ContentSection>
@@ -73,6 +81,36 @@ export default function StretchCeilingsPage() {
             { title: "אחריות מלאה", text: "אחריות יצרן על החומר וההתקנה." },
           ]}
         />
+      </ContentSection>
+
+      <ContentSection bg="light">
+        <h2 className="text-h2-mobile md:text-h2-desktop">תקרות מתוחות לפי חדר</h2>
+        <ul className="mt-4 space-y-2 text-body">
+          <li>
+            <Link href="/stretch-ceiling-living-room" className="text-sky-navy hover:underline">תקרה מתוחה לסלון</Link>{" "}
+            — תאורה משולבת, מראה פרימיום
+          </li>
+          <li>
+            <Link href="/stretch-ceiling-bathroom" className="text-sky-navy hover:underline">תקרה מתוחה לאמבטיה</Link>{" "}
+            — עמידות מוחלטת בלחות
+          </li>
+          <li>
+            <Link href="/stretch-ceiling-kitchen" className="text-sky-navy hover:underline">תקרה מתוחה למטבח</Link>{" "}
+            — קלה לניקוי, ללא ספיגת שומנים
+          </li>
+          <li>
+            <Link href="/stretch-ceiling-mikveh" className="text-sky-navy hover:underline">תקרה מתוחה למקווה</Link>{" "}
+            — עמידות בלחות קיצונית, הדפס שמיים
+          </li>
+        </ul>
+
+        <h2 className="mt-10 text-h2-mobile md:text-h2-desktop">עמודים קשורים</h2>
+        <ul className="mt-4 space-y-2 text-body">
+          <li><Link href="/pricing" className="text-sky-navy hover:underline">מחירון למ״ר</Link></li>
+          <li><Link href="/stretch-ceiling-vs-drywall" className="text-sky-navy hover:underline">תקרה מתוחה או גבס — השוואה</Link></li>
+          <li><Link href="/stretch-ceiling-guide" className="text-sky-navy hover:underline">מדריך מקיף</Link></li>
+          <li><Link href="/barrisol" className="text-sky-navy hover:underline">בריסול</Link></li>
+        </ul>
       </ContentSection>
 
       <CTASection />

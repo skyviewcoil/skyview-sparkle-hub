@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHero } from "@/components/page-hero";
 import { CTASection } from "@/components/cta-section";
 import { ContentSection, FeatureGrid } from "@/components/content-blocks";
@@ -16,6 +17,14 @@ export default function LEDStripPage() {
       <PageHero
         title="תקרה מתוחה עם פס LED — פסים מרחפים"
         subtitle="פסי LED שקועים בתוך יריעת התקרה יוצרים אפקט ייחודי של קווי אור שנראים מרחפים באוויר. עיצוב שמגדיר גבולות, יוצר עומק ומוסיף אופי לכל חלל."
+      />
+
+      <Breadcrumbs
+        items={[
+          { label: "ראשי", href: "/" },
+          { label: "תקרות מתוחות", href: "/stretch-ceilings" },
+          { label: "פס LED" },
+        ]}
       />
       <ContentSection>
         <h2 className="text-h2-mobile md:text-h2-desktop">איך עובדים פסים מרחפים?</h2>
