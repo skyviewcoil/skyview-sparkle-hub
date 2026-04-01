@@ -1,10 +1,4 @@
-/**
- * Site URL resolution:
- * - In production: uses NEXT_PUBLIC_SITE_URL env var, falls back to skyview.co.il
- * - Ensures canonicals always point to the real production domain
- */
-export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://skyview.co.il";
+export const SITE_URL = "https://skyview.co.il";
 
 export const SITE_NAME = "SkyView";
 export const PHONE = "052-808-2988";
