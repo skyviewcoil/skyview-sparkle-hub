@@ -3,24 +3,25 @@ import { SEO } from "@/components/SEO";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHero } from "@/components/page-hero";
 import { CTASection } from "@/components/cta-section";
-import { ContentSection } from "@/components/content-blocks";
-
-const tiers = [
-  { name: "MSD Premium", price: "₪179", unit: "למ״ר", features: ["יריעת PVC איכותית", "מגוון צבעים וגימורים", "עמידות במים", "אחריות 10 שנים", "מדידה, ייצור, התקנה כלולים"] },
-  { name: "RENOLIT", price: "₪249", unit: "למ״ר", features: ["יריעה אירופית פרימיום", "עובי ועמידות מוגברים", "תקן אקולוגי אירופי", "אחריות 15 שנים", "מדידה, ייצור, התקנה כלולים"], highlighted: true },
-];
+import { ContentSection, PageImage } from "@/components/content-blocks";
+import { IMAGES } from "@/lib/storage";
 
 export default function PricingPage() {
+  const tiers = [
+    { name: "MSD Premium", price: "₪179", unit: "למ״ר", features: ["יריעת PVC איכותית", "מגוון צבעים וגימורים", "עמידות במים", "אחריות 10 שנים", "מדידה, ייצור, התקנה כלולים"] },
+    { name: "RENOLIT", price: "₪249", unit: "למ״ר", features: ["יריעה אירופית פרימיום", "עובי ועמידות מוגברים", "תקן אקולוגי אירופי", "אחריות 15 שנים", "מדידה, ייצור, התקנה כלולים"], highlighted: true },
+  ];
+
   return (
     <>
       <SEO title="מחיר תקרה מתוחה למ״ר — מחשבון מחירים 2026" description="מחירי תקרות מתוחות בישראל: MSD Premium מ-₪179/מ״ר, RENOLIT מ-₪249/מ״ר. המחיר כולל מדידה, ייצור, התקנה ואחריות. חישוב לפי שטח, סוג יריעה ותאורה." canonical="/pricing" />
-      <PageHero title="מחיר תקרה מתוחה — שקיפות מלאה" subtitle="מחירון ברור ופשוט ללא הפתעות. המחיר כולל חומר, ייצור, התקנה ואחריות — הכל במחיר אחד למ״ר." ctaText="צרו קשר להצעה" />
+      <PageHero title="מחיר תקרה מתוחה — שקיפות מלאה" subtitle="מחירון ברור ופשוט ללא הפתעות. המחיר כולל חומר, ייצור, התקנה ואחריות — הכל במחיר אחד למ״ר." ctaText="צרו קשר להצעה" image={IMAGES.glossyModern} imageAlt="תקרה מתוחה מותקנת — דוגמת מחיר" />
       <Breadcrumbs items={[{ label: "ראשי", href: "/" }, { label: "מחירים" }]} />
       <section className="section-spacing">
         <div className="section-container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {tiers.map((t) => (
-              <div key={t.name} className={`p-8 border-2 ${t.highlighted ? "border-sky-navy bg-sky-navy/[0.02]" : "border-sky-border"}`}>
+              <div key={t.name} className={`p-8 border-2 rounded-2xl ${t.highlighted ? "border-sky-navy bg-sky-navy/[0.02]" : "border-sky-border"}`}>
                 {t.highlighted && <span className="text-label text-sky-navy uppercase mb-3 block">פרימיום</span>}
                 <h2 className="text-h2-mobile md:text-h2-desktop">{t.name}</h2>
                 <div className="mt-4">
@@ -51,15 +52,15 @@ export default function PricingPage() {
       <ContentSection>
         <h2 className="text-h2-mobile md:text-h2-desktop">מחירים לפי חדר</h2>
         <p className="mt-4 text-body text-sky-muted">להלן הערכה גסה לחדרים נפוצים (MSD Premium, ללא תאורה מיוחדת):</p>
-        <div className="mt-6 overflow-x-auto">
+        <div className="mt-6 overflow-x-auto rounded-2xl border border-sky-border">
           <table className="w-full border-collapse text-body">
             <thead><tr className="bg-sky-navy text-white"><th className="p-3 text-right font-semibold">חדר</th><th className="p-3 text-right font-semibold">שטח ממוצע</th><th className="p-3 text-right font-semibold">הערכת מחיר</th></tr></thead>
             <tbody>
               {[["אמבטיה", "4-6 מ״ר", "₪720-1,070"], ["מטבח", "8-12 מ״ר", "₪1,430-2,150"], ["חדר שינה", "12-16 מ״ר", "₪2,150-2,860"], ["סלון", "20-35 מ״ר", "₪3,580-6,270"]].map(([room, area, price], i) => (
                 <tr key={room} className={i % 2 === 0 ? "bg-white" : "bg-sky-light"}>
-                  <td className="p-3 font-medium border border-sky-border">{room}</td>
-                  <td className="p-3 text-sky-muted border border-sky-border">{area}</td>
-                  <td className="p-3 text-sky-muted border border-sky-border">{price}</td>
+                  <td className="p-3 font-medium border-t border-sky-border">{room}</td>
+                  <td className="p-3 text-sky-muted border-t border-sky-border">{area}</td>
+                  <td className="p-3 text-sky-muted border-t border-sky-border">{price}</td>
                 </tr>
               ))}
             </tbody>

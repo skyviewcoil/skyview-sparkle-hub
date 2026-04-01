@@ -2,13 +2,14 @@ import { SEO } from "@/components/SEO";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHero } from "@/components/page-hero";
 import { CTASection } from "@/components/cta-section";
-import { ContentSection, FeatureGrid } from "@/components/content-blocks";
+import { ContentSection, FeatureGrid, PageImage } from "@/components/content-blocks";
+import { IMAGES } from "@/lib/storage";
 
 export default function BusinessPage() {
   return (
     <>
       <SEO title="תקרות מתוחות לעסקים — משרדים, חנויות, מסעדות" description="תקרות מתוחות לחללים מסחריים: משרדים, חנויות, מסעדות, מלונות, מרפאות ומוסדות ציבור. פתרונות מותאמים לעסקים עם לוחות זמנים מהירים." canonical="/stretch-ceilings-for-business" />
-      <PageHero title="תקרות מתוחות לעסקים — פתרון מהיר ומקצועי" subtitle="התקנה בשעות הלילה או בסופי שבוע, ללא הפרעה לפעילות העסקית. פתרונות מותאמים למשרדים, חנויות, מסעדות, מלונות ומרפאות." ctaText="קבלו הצעה לעסק" />
+      <PageHero title="תקרות מתוחות לעסקים — פתרון מהיר ומקצועי" subtitle="התקנה בשעות הלילה או בסופי שבוע, ללא הפרעה לפעילות העסקית. פתרונות מותאמים למשרדים, חנויות, מסעדות, מלונות ומרפאות." ctaText="קבלו הצעה לעסק" image={IMAGES.printCommercial} imageAlt="תקרה מתוחה בחלל מסחרי" />
       <Breadcrumbs items={[{ label: "ראשי", href: "/" }, { label: "תקרות מתוחות", href: "/stretch-ceilings" }, { label: "לעסקים" }]} />
       <ContentSection>
         <h2 className="text-h2-mobile md:text-h2-desktop">למה עסקים בוחרים בתקרה מתוחה?</h2>
@@ -22,6 +23,7 @@ export default function BusinessPage() {
       <ContentSection bg="light">
         <h2 className="text-h2-mobile md:text-h2-desktop">תחומים שאנחנו משרתים</h2>
         <p className="mt-4 text-body text-sky-muted">משרדים ומרחבי עבודה משותפים, חנויות ומרכזי קניות, מסעדות ובתי קפה, מלונות ולובי, מרפאות רפואיות ודנטליות, גני ילדים ומוסדות חינוך, חדרי כושר וספא, סטודיואים ואולמות אירועים.</p>
+        <PageImage src={IMAGES.printWine} alt="תקרה מתוחה עם הדפס בלובי מלון" />
       </ContentSection>
       <CTASection title="תקרה מתוחה לעסק שלכם" />
     </>

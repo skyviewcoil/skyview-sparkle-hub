@@ -2,13 +2,14 @@ import { SEO } from "@/components/SEO";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHero } from "@/components/page-hero";
 import { CTASection } from "@/components/cta-section";
-import { ContentSection, FeatureGrid } from "@/components/content-blocks";
+import { ContentSection, FeatureGrid, PageImage } from "@/components/content-blocks";
+import { IMAGES } from "@/lib/storage";
 
 export default function BathroomPage() {
   return (
     <>
       <SEO title="תקרה מתוחה לאמבטיה — פתרון עמיד מים מושלם" description="תקרה מתוחה לאמבטיה עמידה ב-100% ללחות, עובש וקילוף. התקנה נקייה, מגוון גימורים ואחריות מלאה. הפתרון האידיאלי לחדרי רחצה." canonical="/stretch-ceiling-bathroom" />
-      <PageHero title="תקרה מתוחה לאמבטיה — עמידה ב-100% ללחות" subtitle="חדרי אמבטיה דורשים תקרה שעומדת באדי מים, לחות גבוהה ונזילות. תקרה מתוחה מ-PVC היא הפתרון המושלם — חסינה למים, נטולת עובש, ומעוצבת בדיוק לפי הטעם שלכם." />
+      <PageHero title="תקרה מתוחה לאמבטיה — עמידה ב-100% ללחות" subtitle="חדרי אמבטיה דורשים תקרה שעומדת באדי מים, לחות גבוהה ונזילות. תקרה מתוחה מ-PVC היא הפתרון המושלם — חסינה למים, נטולת עובש, ומעוצבת בדיוק לפי הטעם שלכם." image={IMAGES.glossyBathroom} imageAlt="תקרה מתוחה לאמבטיה מעוצבת" />
       <Breadcrumbs items={[{ label: "ראשי", href: "/" }, { label: "תקרות מתוחות", href: "/stretch-ceilings" }, { label: "תקרה מתוחה לאמבטיה" }]} />
       <ContentSection>
         <h2 className="text-h2-mobile md:text-h2-desktop">למה תקרה מתוחה מתאימה לאמבטיה?</h2>
@@ -23,6 +24,7 @@ export default function BathroomPage() {
       <ContentSection bg="light">
         <h2 className="text-h2-mobile md:text-h2-desktop">גימורים מומלצים לאמבטיה</h2>
         <p className="mt-4 text-body text-sky-muted">לחדר אמבטיה קטן מומלצת יריעה מבריקה שמגדילה את תחושת המרחב. לאמבטיה גדולה ומעוצבת, יריעת מט או סאטן נותנת מראה יוקרתי ושקט. ניתן גם להוסיף הדפס שמים, עננים או כל עיצוב אחר ליצירת חוויה ייחודית.</p>
+        <PageImage src={IMAGES.glossyMirror} alt="גימור מבריק באמבטיה" />
       </ContentSection>
       <CTASection title="רוצים תקרה מתוחה לאמבטיה?" />
     </>

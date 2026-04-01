@@ -3,7 +3,8 @@ import { SEO } from "@/components/SEO";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHero } from "@/components/page-hero";
 import { CTASection } from "@/components/cta-section";
-import { ContentSection, FeatureGrid } from "@/components/content-blocks";
+import { ContentSection, FeatureGrid, PageImage } from "@/components/content-blocks";
+import { IMAGES } from "@/lib/storage";
 
 const faqs = [
   { q: "האם תקרה מתוחה מתאימה למטבח?", a: "כן. יריעת PVC לא סופגת שומנים, אדים או ריחות ומתנקה בקלות במטלית לחה. זהו פתרון תקרה אידיאלי למטבח." },
@@ -16,7 +17,7 @@ export default function KitchenPage() {
   return (
     <>
       <SEO title="תקרה מתוחה למטבח — תקרה קלה לניקוי ועמידה בחום" description="תקרה מתוחה למטבח עמידה בלחות, שומנים ואדי בישול. משטח חלק שמנקים בשניות, ללא עובש וללא ספיגת ריחות." canonical="/stretch-ceiling-kitchen" />
-      <PageHero title="תקרה מתוחה למטבח — נקייה, מודרנית, ללא תחזוקה" subtitle="המטבח הוא החלל שהכי חשוף לאדים, שומנים ולחות. תקרה מתוחה מ-PVC לא סופגת ריחות, לא צוברת עובש, ומתנקה בשניות — בדיוק מה שמטבח צריך." />
+      <PageHero title="תקרה מתוחה למטבח — נקייה, מודרנית, ללא תחזוקה" subtitle="המטבח הוא החלל שהכי חשוף לאדים, שומנים ולחות. תקרה מתוחה מ-PVC לא סופגת ריחות, לא צוברת עובש, ומתנקה בשניות — בדיוק מה שמטבח צריך." image={IMAGES.glossyKitchen} imageAlt="תקרה מתוחה למטבח מודרני" />
       <Breadcrumbs items={[{ label: "ראשי", href: "/" }, { label: "תקרות מתוחות", href: "/stretch-ceilings" }, { label: "תקרה מתוחה למטבח" }]} />
       <ContentSection>
         <h2 className="text-h2-mobile md:text-h2-desktop">למה תקרת גבס במטבח בעייתית</h2>
@@ -36,9 +37,9 @@ export default function KitchenPage() {
       <section className="section-spacing">
         <div className="section-container max-w-prose">
           <h2 className="text-h2-mobile md:text-h2-desktop text-center">שאלות נפוצות — תקרה מתוחה למטבח</h2>
-          <div className="mt-10 space-y-6">
+          <div className="mt-10 space-y-4">
             {faqs.map((f, i) => (
-              <details key={i} className="group bg-white border border-sky-border p-5" open={i === 0}>
+              <details key={i} className="group bg-white border border-sky-border p-5 rounded-2xl" open={i === 0}>
                 <summary className="cursor-pointer text-h3-mobile md:text-h3-desktop list-none flex justify-between items-center">{f.q}<span className="text-sky-navy transition-transform group-open:rotate-45 text-xl mr-3">+</span></summary>
                 <p className="mt-3 text-body text-sky-muted">{f.a}</p>
               </details>

@@ -2,13 +2,14 @@ import { SEO } from "@/components/SEO";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHero } from "@/components/page-hero";
 import { CTASection } from "@/components/cta-section";
-import { ContentSection, FeatureGrid } from "@/components/content-blocks";
+import { ContentSection, FeatureGrid, PageImage } from "@/components/content-blocks";
+import { IMAGES } from "@/lib/storage";
 
 export default function LivingRoomPage() {
   return (
     <>
       <SEO title="תקרה מתוחה לסלון — עיצוב תקרה פרימיום" description="תקרה מתוחה לסלון יוצרת משטח חלק ואחיד עם תאורה משולבת. גימורי מט, מבריק וסאטן בהתאמה אישית. התקנה ביום אחד." canonical="/stretch-ceiling-living-room" />
-      <PageHero title="תקרה מתוחה לסלון — המרכז של הבית" subtitle="הסלון הוא החלל המרכזי בבית, והתקרה קובעת את האווירה. תקרה מתוחה יוצרת משטח חלק ומושלם, מסתירה תשתיות, ומשלבת תאורה בצורה שלא אפשרית עם גבס." />
+      <PageHero title="תקרה מתוחה לסלון — המרכז של הבית" subtitle="הסלון הוא החלל המרכזי בבית, והתקרה קובעת את האווירה. תקרה מתוחה יוצרת משטח חלק ומושלם, מסתירה תשתיות, ומשלבת תאורה בצורה שלא אפשרית עם גבס." image={IMAGES.glossyLiving} imageAlt="תקרה מתוחה לסלון עם תאורה משולבת" />
       <Breadcrumbs items={[{ label: "ראשי", href: "/" }, { label: "תקרות מתוחות", href: "/stretch-ceilings" }, { label: "תקרה מתוחה לסלון" }]} />
       <ContentSection>
         <h2 className="text-h2-mobile md:text-h2-desktop">עיצוב תקרה שמשנה את הסלון</h2>
@@ -23,6 +24,7 @@ export default function LivingRoomPage() {
       <ContentSection bg="light">
         <h2 className="text-h2-mobile md:text-h2-desktop">איזה גימור מתאים לסלון?</h2>
         <p className="mt-4 text-body text-sky-muted">לסלון בסגנון מודרני — מט לבן או אפור בהיר עם פסי LED נסתרים. לסלון קלאסי — סאטן בגווני שמנת עם ספוטים. לסלון קומפקטי — מבריק שמכפיל את תחושת הגובה והמרחב.</p>
+        <PageImage src={IMAGES.glossyCorner} alt="תקרה מתוחה בסלון מודרני" />
       </ContentSection>
       <CTASection title="מוכנים לשדרג את הסלון?" />
     </>

@@ -2,13 +2,14 @@ import { SEO } from "@/components/SEO";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHero } from "@/components/page-hero";
 import { CTASection } from "@/components/cta-section";
-import { ContentSection, FeatureGrid } from "@/components/content-blocks";
+import { ContentSection, FeatureGrid, PageImage } from "@/components/content-blocks";
+import { IMAGES } from "@/lib/storage";
 
 export default function LEDStripPage() {
   return (
     <>
       <SEO title="תקרה מתוחה עם פס LED — קווי אור מרחפים" description="פסי LED נסתרים בתוך תקרה מתוחה יוצרים קווי אור מרחפים (פסים מרחפים). אפקט ייחודי של תאורה צפה שמגדיר את החלל." canonical="/stretch-ceiling-led-strip" />
-      <PageHero title="תקרה מתוחה עם פס LED — פסים מרחפים" subtitle="פסי LED שקועים בתוך יריעת התקרה יוצרים אפקט ייחודי של קווי אור שנראים מרחפים באוויר. עיצוב שמגדיר גבולות, יוצר עומק ומוסיף אופי לכל חלל." />
+      <PageHero title="תקרה מתוחה עם פס LED — פסים מרחפים" subtitle="פסי LED שקועים בתוך יריעת התקרה יוצרים אפקט ייחודי של קווי אור שנראים מרחפים באוויר. עיצוב שמגדיר גבולות, יוצר עומק ומוסיף אופי לכל חלל." image={IMAGES.glossyDetail} imageAlt="פסי LED מרחפים בתקרה מתוחה" />
       <Breadcrumbs items={[{ label: "ראשי", href: "/" }, { label: "תקרות מתוחות", href: "/stretch-ceilings" }, { label: "פס LED" }]} />
       <ContentSection>
         <h2 className="text-h2-mobile md:text-h2-desktop">איך עובדים פסים מרחפים?</h2>

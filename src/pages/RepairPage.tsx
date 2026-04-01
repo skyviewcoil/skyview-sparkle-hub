@@ -4,12 +4,13 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHero } from "@/components/page-hero";
 import { CTASection } from "@/components/cta-section";
 import { ContentSection, FeatureGrid } from "@/components/content-blocks";
+import { IMAGES } from "@/lib/storage";
 
 export default function RepairPage() {
   return (
     <>
       <SEO title="תיקון תקרה מתוחה — שירות מהיר ומקצועי" description="תיקון תקרות מתוחות: קרעים, ניקוז הצפות, החלפת יריעה, תיקון תאורה וטיפול בצהבה. שירות מהיר בכל רחבי ישראל." canonical="/stretch-ceiling-repair" />
-      <PageHero title="תיקון תקרה מתוחה — שירות מהיר ומקצועי" subtitle="קרע ביריעה? הצפה מהדירה מעל? בעיית תאורה? צוות SkyView מגיע לתיקון מהיר ומקצועי — גם אם התקרה לא הותקנה על ידנו." ctaText="קראו לשירות" />
+      <PageHero title="תיקון תקרה מתוחה — שירות מהיר ומקצועי" subtitle="קרע ביריעה? הצפה מהדירה מעל? בעיית תאורה? צוות SkyView מגיע לתיקון מהיר ומקצועי — גם אם התקרה לא הותקנה על ידנו." ctaText="קראו לשירות" image={IMAGES.glossyDark} imageAlt="שירות תיקון תקרה מתוחה" />
       <Breadcrumbs items={[{ label: "ראשי", href: "/" }, { label: "תיקון" }]} />
       <ContentSection>
         <h2 className="text-h2-mobile md:text-h2-desktop">סוגי תיקונים</h2>
