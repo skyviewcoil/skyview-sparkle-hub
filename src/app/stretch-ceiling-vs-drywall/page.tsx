@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHero } from "@/components/page-hero";
 import { CTASection } from "@/components/cta-section";
 import { ContentSection, ComparisonTable } from "@/components/content-blocks";
@@ -30,6 +32,13 @@ export default function VsDrywallPage() {
         title="תקרה מתוחה או גבס — מה עדיף?"
         subtitle="השוואה מלאה ואובייקטיבית בין שני הפתרונות הנפוצים ביותר לתקרות. לכל אחד יש יתרונות — הנה העובדות שיעזרו לכם להחליט."
       />
+
+      <Breadcrumbs
+        items={[
+          { label: "ראשי", href: "/" },
+          { label: "תקרה מתוחה או גבס" },
+        ]}
+      />
       <ContentSection>
         <h2 className="text-h2-mobile md:text-h2-desktop">טבלת השוואה מלאה</h2>
         <ComparisonTable rows={rows} headerA="תקרה מתוחה" headerB="תקרת גבס" />
@@ -48,6 +57,28 @@ export default function VsDrywallPage() {
           בתקרה (נדנדות, ערסלים).
         </p>
       </ContentSection>
+
+      <ContentSection>
+        <h2 className="text-h2-mobile md:text-h2-desktop">עמודים קשורים</h2>
+        <ul className="mt-4 space-y-2 text-body">
+          <li>
+            <Link href="/pricing" className="text-sky-navy hover:underline">מחירון תקרות מתוחות למ״ר</Link>
+          </li>
+          <li>
+            <Link href="/stretch-ceiling-guide" className="text-sky-navy hover:underline">מדריך מקיף לתקרות מתוחות</Link>
+          </li>
+          <li>
+            <Link href="/stretch-ceiling-bathroom" className="text-sky-navy hover:underline">תקרה מתוחה לאמבטיה — עמידות במים</Link>
+          </li>
+          <li>
+            <Link href="/stretch-ceiling-kitchen" className="text-sky-navy hover:underline">תקרה מתוחה למטבח</Link>
+          </li>
+          <li>
+            <Link href="/stretch-ceiling-repair" className="text-sky-navy hover:underline">תיקון תקרה מתוחה</Link>
+          </li>
+        </ul>
+      </ContentSection>
+
       <CTASection title="לא בטוחים מה מתאים?" text="דברו איתנו ונעזור לכם לבחור את הפתרון הנכון." />
     </>
   );

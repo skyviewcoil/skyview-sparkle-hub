@@ -14,6 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Room pages
     { path: "/stretch-ceiling-living-room", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/stretch-ceiling-bathroom", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "/stretch-ceiling-kitchen", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "/stretch-ceiling-mikveh", priority: 0.75, changeFrequency: "monthly" as const },
     // Type pages
     { path: "/stretch-ceiling-matte", priority: 0.75, changeFrequency: "monthly" as const },
     { path: "/stretch-ceiling-glossy", priority: 0.75, changeFrequency: "monthly" as const },

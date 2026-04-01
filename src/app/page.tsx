@@ -198,6 +198,34 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Rooms */}
+      <section className="section-spacing">
+        <div className="section-container">
+          <h2 className="text-h2-mobile md:text-h2-desktop text-center">
+            תקרות מתוחות לפי חדר
+          </h2>
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { title: "סלון", text: "תאורה משולבת ומראה פרימיום", href: "/stretch-ceiling-living-room" },
+              { title: "אמבטיה", text: "עמידות מוחלטת בלחות ועובש", href: "/stretch-ceiling-bathroom" },
+              { title: "מטבח", text: "קלה לניקוי, ללא ספיגת שומנים", href: "/stretch-ceiling-kitchen" },
+              { title: "מקווה", text: "תקרה מוארת עמידה בלחות קיצונית", href: "/stretch-ceiling-mikveh" },
+            ].map((r) => (
+              <Link
+                key={r.href}
+                href={r.href}
+                className="group block p-5 border border-sky-border bg-white hover:border-sky-navy/30 transition-colors text-center"
+              >
+                <h3 className="text-h3-mobile md:text-h3-desktop group-hover:text-sky-navy transition-colors">
+                  {r.title}
+                </h3>
+                <p className="mt-2 text-small text-sky-muted">{r.text}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Process */}
       <section className="section-spacing">
         <div className="section-container">

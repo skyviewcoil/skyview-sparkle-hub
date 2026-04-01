@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHero } from "@/components/page-hero";
 import { CTASection } from "@/components/cta-section";
 import { ContentSection } from "@/components/content-blocks";
@@ -6,7 +8,7 @@ import { ContentSection } from "@/components/content-blocks";
 export const metadata: Metadata = {
   title: "מחיר תקרה מתוחה למ״ר — מחשבון מחירים 2026",
   description:
-    "מחירי תקרות מתוחות בישראל: MSD Premium מ-₪179/מ״ר, RENOLIT מ-₪249/מ״ר. חישוב מהיר לפי שטח, סוג יריעה ותאורה.",
+    "מחירי תקרות מתוחות בישראל: MSD Premium מ-₪179/מ״ר, RENOLIT מ-₪249/מ״ר. המחיר כולל מדידה, ייצור, התקנה ואחריות. חישוב לפי שטח, סוג יריעה ותאורה.",
   alternates: { canonical: "/pricing" },
 };
 
@@ -20,7 +22,7 @@ const tiers = [
       "מגוון צבעים וגימורים",
       "עמידות במים",
       "אחריות 10 שנים",
-      "התקנה מקצועית כלולה",
+      "מדידה, ייצור, התקנה כלולים",
     ],
   },
   {
@@ -32,7 +34,7 @@ const tiers = [
       "עובי ועמידות מוגברים",
       "תקן אקולוגי אירופי",
       "אחריות 15 שנים",
-      "התקנה מקצועית כלולה",
+      "מדידה, ייצור, התקנה כלולים",
     ],
     highlighted: true,
   },
@@ -45,6 +47,13 @@ export default function PricingPage() {
         title="מחיר תקרה מתוחה — שקיפות מלאה"
         subtitle="מחירון ברור ופשוט ללא הפתעות. המחיר כולל חומר, ייצור, התקנה ואחריות — הכל במחיר אחד למ״ר."
         ctaText="צרו קשר להצעה"
+      />
+
+      <Breadcrumbs
+        items={[
+          { label: "ראשי", href: "/" },
+          { label: "מחירים" },
+        ]}
       />
 
       <section className="section-spacing">
@@ -89,18 +98,96 @@ export default function PricingPage() {
       </section>
 
       <ContentSection bg="light">
-        <h2 className="text-h2-mobile md:text-h2-desktop">מה משפיע על המחיר?</h2>
+        <h2 className="text-h2-mobile md:text-h2-desktop">מה משפיע על המחיר הסופי?</h2>
         <p className="mt-4 text-body text-sky-muted">
-          המחיר הסופי תלוי בכמה גורמים: שטח התקרה, מספר הפינות והחתכים, סוג
-          היריעה (מט, מבריק, סאטן, הדפס), ופתרון התאורה. חללים מורכבים עם
-          עמודים, נישות או קירות עקומים עשויים לדרוש עבודת התקנה נוספת. צרו קשר
-          לקבלת הצעת מחיר מדויקת לפרויקט שלכם.
+          שטח התקרה הוא הגורם העיקרי. מעבר לכך: מספר הפינות והחתכים, סוג
+          הגימור (מט, מבריק, סאטן, הדפס), ופתרון התאורה. חללים עם עמודים,
+          נישות או צורות לא סטנדרטיות עשויים לדרוש עבודת התאמה נוספת.
         </p>
-        <h3 className="mt-8 text-h3-mobile md:text-h3-desktop">מה כלול במחיר?</h3>
-        <p className="mt-3 text-body text-sky-muted">
-          כל המחירים כוללים: מדידה, ייצור בהתאמה אישית, חומרים, פרופילי
-          אלומיניום, התקנה מקצועית, ניקיון ואחריות. אין תוספות נסתרות.
+        <p className="mt-4 text-body text-sky-muted">
+          תוספות כמו{" "}
+          <Link href="/stretch-ceiling-led-strip" className="text-sky-navy hover:underline">
+            פסי LED
+          </Link>
+          ,{" "}
+          <Link href="/stretch-ceiling-magnetic-track" className="text-sky-navy hover:underline">
+            מסילות מגנטיות
+          </Link>{" "}
+          או{" "}
+          <Link href="/printed-stretch-ceiling" className="text-sky-navy hover:underline">
+            הדפס מותאם
+          </Link>{" "}
+          מתומחרות בנפרד.
         </p>
+
+        <h2 className="mt-10 text-h2-mobile md:text-h2-desktop">מה כלול במחיר?</h2>
+        <p className="mt-4 text-body text-sky-muted">
+          מדידה מקצועית, ייצור בהתאמה אישית, פרופילי אלומיניום, חומרים,
+          התקנה מקצועית, ניקיון באתר, ואחריות. אין תוספות נסתרות.
+        </p>
+
+        <h2 className="mt-10 text-h2-mobile md:text-h2-desktop">מה לא כלול?</h2>
+        <p className="mt-4 text-body text-sky-muted">
+          עבודות חשמל (הזזת נקודות חשמל, הוספת שקעים). רכישת גופי תאורה
+          (ספוטים, פסי LED). פירוק תקרה קיימת אם נדרש. פריטים אלה מתומחרים
+          בנפרד ומפורטים בהצעה.
+        </p>
+      </ContentSection>
+
+      <ContentSection>
+        <h2 className="text-h2-mobile md:text-h2-desktop">מחירים לפי חדר</h2>
+        <p className="mt-4 text-body text-sky-muted">
+          להלן הערכה גסה לחדרים נפוצים (MSD Premium, ללא תאורה מיוחדת):
+        </p>
+        <div className="mt-6 overflow-x-auto">
+          <table className="w-full border-collapse text-body">
+            <thead>
+              <tr className="bg-sky-navy text-white">
+                <th className="p-3 text-right font-semibold">חדר</th>
+                <th className="p-3 text-right font-semibold">שטח ממוצע</th>
+                <th className="p-3 text-right font-semibold">הערכת מחיר</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ["אמבטיה", "4-6 מ״ר", "₪720-1,070"],
+                ["מטבח", "8-12 מ״ר", "₪1,430-2,150"],
+                ["חדר שינה", "12-16 מ״ר", "₪2,150-2,860"],
+                ["סלון", "20-35 מ״ר", "₪3,580-6,270"],
+              ].map(([room, area, price], i) => (
+                <tr key={room} className={i % 2 === 0 ? "bg-white" : "bg-sky-light"}>
+                  <td className="p-3 font-medium border border-sky-border">{room}</td>
+                  <td className="p-3 text-sky-muted border border-sky-border">{area}</td>
+                  <td className="p-3 text-sky-muted border border-sky-border">{price}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-4 text-small text-sky-muted">
+          * מחירים להערכה בלבד. המחיר הסופי נקבע לפי מדידה מדויקת.
+        </p>
+      </ContentSection>
+
+      <ContentSection bg="light">
+        <h2 className="text-h2-mobile md:text-h2-desktop">עמודים קשורים</h2>
+        <ul className="mt-4 space-y-2 text-body">
+          <li>
+            <Link href="/stretch-ceiling-living-room" className="text-sky-navy hover:underline">תקרה מתוחה לסלון</Link>
+          </li>
+          <li>
+            <Link href="/stretch-ceiling-bathroom" className="text-sky-navy hover:underline">תקרה מתוחה לאמבטיה</Link>
+          </li>
+          <li>
+            <Link href="/stretch-ceiling-kitchen" className="text-sky-navy hover:underline">תקרה מתוחה למטבח</Link>
+          </li>
+          <li>
+            <Link href="/lighted-stretch-ceiling" className="text-sky-navy hover:underline">תקרה מוארת</Link>
+          </li>
+          <li>
+            <Link href="/stretch-ceiling-vs-drywall" className="text-sky-navy hover:underline">תקרה מתוחה או גבס — השוואת מחירים</Link>
+          </li>
+        </ul>
       </ContentSection>
 
       <CTASection
