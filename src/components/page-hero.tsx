@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 interface PageHeroProps {
   title: string;
@@ -23,10 +23,10 @@ export function PageHero({
           {subtitle}
         </p>
         <div className="mt-8 flex flex-col sm:flex-row gap-3">
-          <Link href={ctaHref} className="btn-primary">
+          <Link to={ctaHref} className="btn-primary">
             {ctaText}
           </Link>
-          <Link href="/pricing" className="btn-secondary">
+          <Link to="/pricing" className="btn-secondary">
             למחשבון המחיר
           </Link>
         </div>
