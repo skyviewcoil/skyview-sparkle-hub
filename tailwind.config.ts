@@ -5,7 +5,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        heebo: ["Heebo", "sans-serif"],
+        heebo: ["var(--font-heebo)", "sans-serif"],
       },
       colors: {
         sky: {
